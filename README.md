@@ -12,7 +12,31 @@
 
 <!-- # Sorting Algorithms -->
 
-<!-- ### Merge Sort -->
+## Sorting Techniques
+
+### Bubble Sort
+* Bubble Sort repeatedly steps through the list, compares adjacent elements, and swaps them if they are in the wrong order. 
+* This process is repeated until the list is sorted. 
+
+### Selection Sort
+* Selection Sort works by repeatedly finding the minimum element from the unsorted portion of the list and moving it to the beginning.
+
+### Insertion Sort
+* Insertion Sort builds the sorted list one item at a time by repeatedly picking the next item and inserting it into its correct position within the sorted portion. 
+
+### Merge Sort
+* Merge Sort is a divide-and-conquer algorithm that splits the list into halves, sorts each half, and then merges the sorted halves. 
+
+### Quick Sort
+* Quick Sort also uses a divide-and-conquer approach by selecting a 'pivot' element, partitioning the list into elements less than and greater than the pivot, and recursively sorting the partitions. 
+
+### Heap Sort
+* Heap Sort involves building a binary heap from the list and then repeatedly extracting the maximum element from the heap to build a sorted list. 
+
+### Radix Sort
+* Radix Sort is a non-comparative sorting algorithm that processes numbers digit by digit starting from the least significant digit to the most significant digit. 
+
+
 
 # Linked List
 
@@ -25,7 +49,9 @@ Node* y = &x;
 Node* y = new Node(2, nullptr);
 ```
 
-# Floyd's Warshall Algorithm
+# Shortest Path Algorithms
+
+## Floyd's Warshall Algorithm
 
 ### #include<iomanip> consists:
 * setw(10) sets the width of the output field to 10 characters.

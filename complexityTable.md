@@ -9,15 +9,19 @@
 
 ## Sorting Algorithms
 
-| Algorithm          | Time Complexity (Average) | Time Complexity (Worst) | Space Complexity | Description                                      |
-|--------------------|---------------------------|-------------------------|------------------|--------------------------------------------------|
-| Bubble Sort        | O(n²)                     | O(n²)                   | O(1)             | Simple comparison-based sort.                   |
-| Selection Sort     | O(n²)                     | O(n²)                   | O(1)             | Selects the minimum element and places it.      |
-| Insertion Sort     | O(n²)                     | O(n²)                   | O(1)             | Builds the sorted array one item at a time.     |
-| Merge Sort         | O(n log n)                | O(n log n)              | O(n)             | Divide-and-conquer sort.                        |
-| Quick Sort         | O(n log n)                | O(n²)                   | O(log n)         | Divide-and-conquer with partitioning.           |
-| Heap Sort          | O(n log n)                | O(n log n)              | O(1)             | Builds a heap and extracts the maximum element. |
-| Radix Sort         | O(nk)                     | O(nk)                   | O(n + k)         | Non-comparative integer sort.                   |
+## Sorting Algorithms
+
+| Algorithm          | Time Complexity (Best) | Time Complexity (Average) | Time Complexity (Worst) | Space Complexity | Description                                      |
+|--------------------|-------------------------|---------------------------|-------------------------|------------------|--------------------------------------------------|
+| Bubble Sort        | O(n)                    | O(n²)                     | O(n²)                   | O(1)             | Simple comparison-based sort.                   |
+| Selection Sort     | O(n²)                   | O(n²)                     | O(n²)                   | O(1)             | Selects the minimum element and places it.      |
+| Insertion Sort     | O(n)                    | O(n²)                     | O(n²)                   | O(1)             | Builds the sorted array one item at a time.     |
+| Merge Sort         | O(n log n)              | O(n log n)                | O(n log n)              | O(n)             | Divide-and-conquer sort.                        |
+| Quick Sort         | O(n log n)              | O(n log n)                | O(n²)                   | O(log n)         | Divide-and-conquer with partitioning.           |
+| Heap Sort          | O(n log n)              | O(n log n)                | O(n log n)              | O(1)             | Builds a heap and extracts the maximum element. |
+| Radix Sort         | O(nk)                   | O(nk)                     | O(nk)                   | O(n + k)         | Non-comparative integer sort.                   |
+
+
 
 ## Linked List Operations
 
