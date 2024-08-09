@@ -6,10 +6,12 @@ void bubbleSort(int arr[], int n)
 {
     for(int i = n-1; i >= 0; i--)
     {
+        int swaps = 0; // Used for best case
         for(int j = 0; j < i; j++)
         {
             if(arr[j] > arr[j+1])
             {
+                swaps = 1; 
                 // int temp = arr[j];
                 // arr[j] = arr[j+1];
                 // arr[j+1] = temp;
@@ -21,6 +23,8 @@ void bubbleSort(int arr[], int n)
             }
             
         }
+        // cout << swaps << endl;
+        if(swaps == 0) return;
     }
 }
 
