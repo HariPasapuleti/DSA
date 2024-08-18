@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include <algorithm>
 
 using namespace std;
 
@@ -14,7 +15,7 @@ bool isPrimeAvg(int num)
     return true;
 }
 
-bool isPrimeBest(int num)
+bool isPrimeBetter(int num)
 {
     if(num == 0 || num == 1) return false;
     if(num == 2 || num == 3) return true;
@@ -28,6 +29,30 @@ bool isPrimeBest(int num)
 
 }
 
+void isPrimeBest(int num)
+{
+    // cout << "working" << endl;
+    vector<bool> is_prime(num + 1, true);
+
+    for(int i = 2; i*i <= num; i++)
+    {
+        if(is_prime[i] == true) {
+            for(int j = i*i; j <= num; j+=i)
+            {
+                is_prime[j] = false;
+            }
+        }
+    }
+
+    for(int i = 2; i <= num; i++)
+    {
+        if(is_prime[i] == true) {
+            cout << i << " ";
+        }
+    }
+
+}
+
 
 int main()
 {
@@ -36,11 +61,13 @@ int main()
     cin >> n;
 
     cout << "Prime numbers upto " << n << " are: "; 
-    for(int i = 0; i < n; i++)
-    {
-        if(isPrimeBest(i)) {
-            cout << i << " ";
-        }
-    }
+
+    isPrimeBest(n);
+    // for(int i = 0; i < n; i++)
+    // {
+    //     if(isPrimeBest(i)) {
+    //         cout << i << " ";
+    //     }
+    // }
     return 0;
 }
