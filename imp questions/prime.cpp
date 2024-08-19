@@ -31,6 +31,7 @@ bool isPrimeBetter(int num)
 
 void isPrimeBest(int num)
 {
+    // Sieve Eratosthenes Approach
     // cout << "working" << endl;
     vector<bool> is_prime(num + 1, true);
 
