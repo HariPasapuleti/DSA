@@ -35,8 +35,6 @@ int fib(int n)
         t2 = nextTerm;
         nextTerm = t1 + t2;
     }
-    
-
 }
 
 

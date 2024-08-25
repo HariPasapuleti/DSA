@@ -63,6 +63,7 @@
     "list": "cpp",
     "algorithm": "cpp",
     "valarray": "cpp",
-    "cmath": "cpp"
+    "cmath": "cpp",
+    "new": "cpp"
   }
 }
