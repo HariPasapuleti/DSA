@@ -1,6 +1,7 @@
 #include<iostream>
 #include<vector>
 #include<queue>
+#include<stack>
 
 using namespace std;
 
@@ -13,6 +14,8 @@ struct Node {
         data = val;
         left = right = NULL;
     }
+    // or
+    // Node(int val) : data(val), left(NULL), right(NULL) {}
 };
 
 void preorderTraversal(Node* root)
@@ -73,8 +76,85 @@ vector<vector<int>> levelTraversal(Node* root)
         }
         result.push_back(level);
     }
-
 }
+
+vector<int> iterativePreorder(Node* root)
+{
+    vector<int> preorder;
+    stack<Node* > stack;
+    if(root == NULL) return preorder;
+
+    stack.push(root);
+
+    while(!stack.empty())
+    {
+        Node* node = stack.top();
+        stack.pop();
+
+        preorder.push_back(node->data);
+        cout << node->data << " ";
+        if(node->right != NULL) stack.push(node->right);
+        if(node->left != NULL) stack.push(node->left);
+    }
+    return preorder;
+}
+
+vector<int> iterativePostorder2Stacks(Node* root)
+{
+    vector<int> postorder;
+    stack<Node* > stack1, stack2;
+    if(root == NULL) return postorder;
+
+    stack1.push(root);
+
+    while(!stack1.empty())
+    {
+        Node* node = stack1.top();
+        stack1.pop();
+        stack2.push(node);
+
+        postorder.push_back(node->data);
+        cout << node->data << " ";
+        if(node->right != NULL) stack1.push(node->right);
+        if(node->left != NULL) stack1.push(node->left);
+    }
+
+    while(!stack2.empty())
+    {
+        postorder.push_back(stack2.top()->data);
+        stack2.pop();
+    }
+    return postorder;
+}
+
+
+vector<int> iterativeInorder(Node* root)
+{
+    vector<int> inorder;
+    stack<Node*> stack; // Auxilary stack trees
+    Node* node = root;
+
+    while(true)
+    {
+        if(node != NULL) {
+            stack.push(node);
+            node = node->left;
+        }
+        else {
+            if(stack.empty()) break;
+            node = stack.top();
+            stack.pop();
+            inorder.push_back(node->data);
+            cout << node->data << " ";
+            node = node->right;
+        }
+    }
+    return inorder;
+}
+
+
+
+
 
 int main()
 {
@@ -93,6 +173,9 @@ int main()
     // preorderTraversal(root);
     // inorderTraversal(root);
     // postorderTraversal(root);
-    levelTraversal(root);
+    // levelTraversal(root);
+    // iterativePreorder(root);
+    // iterativeInorder(root);
+    iterativePostorder2Stacks(root);
     return 0;
 }
