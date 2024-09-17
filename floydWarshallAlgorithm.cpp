@@ -41,6 +41,25 @@ int main()
     dist[3][4] = 7;
     dist[4][3] = 5;
 
+    // dist[0][0] = 5;
+    // dist[0][1] = 10;
+    // dist[0][2] = 3;
+    // dist[0][2] = 3;
+    // dist[0][2] = 3;
+    // dist[1][2] = 1;
+    // dist[1][2] = 1;
+    // dist[1][3] = 2;
+    // dist[1][2] = 1;
+    // dist[1][2] = 1;
+    // dist[2][1] = 4;
+    // dist[2][1] = 4;
+    // dist[2][1] = 4;
+    // dist[2][3] = 8;
+    // dist[2][1] = 4;
+    // dist[3][4] = 7;
+    // dist[3][4] = 7;
+    // dist[4][3] = 5;
+
     floydWarshallAlgorithm(dist, n);
 
     cout << "Shortest Distance Matrix: " << endl;

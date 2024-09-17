@@ -29,12 +29,13 @@ int fib(int n)
 
     cout << "Fibonacci Series: " << t1 << ", " << t2 << ", ";
 
-    while(nextTerm <= n) {
+    while(nextTerm <= n-1) {
         cout << nextTerm << ", ";
         t1 = t2;
         t2 = nextTerm;
         nextTerm = t1 + t2;
     }
+    cout << nextTerm;
 }
 
 
