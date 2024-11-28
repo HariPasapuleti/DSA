@@ -8,9 +8,10 @@ int isAmstrong(int n)
 {
     if(n < 9) return n;
     int sum = 0, temp = n, count = 0;
-    // int digits = floor(log10(abs(n)) + 1);
+    int digits = floor(log10(abs(n)) + 1);
+    // int digits = ceil(log10(abs(n)));
 
-    int digits = (int)log2(n) + 1;
+    // int digits = (int)log2(n) + 1;
     cout << digits << endl;
 
     while(temp != 0)
