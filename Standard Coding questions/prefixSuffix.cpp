@@ -53,6 +53,24 @@ public:
     }
 };
 
+// Space complexity O(1)
+class GreedyWithPrefixTracking {
+    public:
+        long long maximumTripletValue(vector<int>& nums) {
+    
+            int maxi = INT_MIN, diff = 0, n = nums.size();
+            long long res = 0;
+            for (int i = 0; i < n; i++) {
+                maxi = max(maxi, nums[i]);
+                if (i >= 2)
+                    res = max(res, (long long)diff * nums[i]);
+                if (i >= 1)
+                    diff = max(diff, maxi - nums[i]);
+            }
+            return res;
+        }
+    };
+
 int main() {
     vector<int> nums1 = {12,6,1,2,7};
     vector<int> nums2 = {1,10,3,4,19};
@@ -72,6 +90,11 @@ int main() {
     cout << "Greedy + Prefix Suffix Array Output: " << sol3.maximumTripletValue(nums1) << endl;
     cout << "Greedy + Prefix Suffix Array Output: " << sol3.maximumTripletValue(nums2) << endl;
     cout << "Greedy + Prefix Suffix Array Output: " << sol3.maximumTripletValue(nums3) << endl;
+
+    GreedyWithPrefixTracking sol4;
+    cout << "Greedy with Prefix Tracking" << sol4.maximumTripletValue(nums1) << endl;
+    cout << "Greedy with Prefix Tracking" << sol4.maximumTripletValue(nums2) << endl;
+    cout << "Greedy with Prefix Tracking" << sol4.maximumTripletValue(nums3) << endl;
     
     return 0;
 }
