@@ -12,10 +12,19 @@ void insertionSort(int arr[], int n)
             int temp = arr[j];
             arr[j] = arr[j-1];
             arr[j-1] = temp;
-
             j--;
         }
     }
+}
+
+void insertionSort_rec(int arr[], int n, int size) {
+    if(n == size) return;
+    int temp = n;
+    while(temp > 0 && arr[temp] < arr[temp - 1]) {
+        swap(arr[temp], arr[temp - 1]);
+        temp--;
+    }
+    insertionSort_rec(arr, n + 1, size);
 }
 
 int main() 
@@ -31,7 +40,8 @@ int main()
         cin >> arr[i];
     }
 
-    insertionSort(arr, n);
+    // insertionSort(arr, n);
+    insertionSort_rec(arr, 0, n);
 
     cout << "Sorted array" << endl;
     for(int i = 0; i < n; i++)
