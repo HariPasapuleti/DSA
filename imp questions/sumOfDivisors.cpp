@@ -8,6 +8,7 @@ int sumOfAllDivisorsSol1(int n) {
     int res = 0;
     for (int i = 1; i <= n; i++) {
         res += (n / i) * i;
+        cout << (n / i) * i << " ";
     }
     return res;
 }
@@ -35,7 +36,7 @@ int main() {
     cin >> n;
 
     cout << "Solution 1 Output: " << sumOfAllDivisorsSol1(n) << endl;
-    cout << "Solution 2 Output: " << sumOfAllDivisorsSol2(n) << endl;
+    // cout << "Solution 2 Output: " << sumOfAllDivisorsSol2(n) << endl;
 
     return 0;
 }
