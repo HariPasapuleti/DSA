@@ -41,7 +41,7 @@ int main()
     }
 
     // insertionSort(arr, n);
-    insertionSort_rec(arr, 0, n);
+    insertionSort_rec(arr, 1, n);
 
     cout << "Sorted array" << endl;
     for(int i = 0; i < n; i++)
